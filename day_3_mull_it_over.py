@@ -1,7 +1,7 @@
 import re
 from pprint import pprint
 
-with open('day_3_input.txt') as fin:
+with open('data_3.txt') as fin:
     myfile = fin.read()
 
 # Part 1/2

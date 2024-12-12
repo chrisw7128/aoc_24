@@ -1,4 +1,4 @@
-with open('day_4_input.txt') as fin:
+with open('data_4.txt') as fin:
     myfile = fin.readlines()
 
 # Part 1 / 2
