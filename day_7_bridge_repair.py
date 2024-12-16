@@ -12,34 +12,46 @@ with open(f'data_7.txt') as fin:
     # # Tried dict below:
     # myfile = {int(k.strip()): v.strip().split() for item in myfile for k, v in [item.split(':')]}
     # myfile = {k: [int(v) for v in value_list] for k, value_list in myfile.items()}
-    pprint(myfile)
 
-def find_matches(mylist):
+    # pprint(myfile)
+
+# Part 1 / 2
+    
+def find_matches(mylist, operators):
     matches = 0
     for item in mylist:
-        print('********')
+        # print('********')
         k = item[0]
         v = item[1:]
-        print(f'evaluating {k}, {v}')
-        math_combos = list(product(("+*"), repeat=len(v)-1))
-        print(f'num math combos: {len(math_combos)}')
+        # print(f'evaluating {k}, {v}')
+        math_combos = list(product((operators), repeat=len(v)-1))
+        # print(f'num math combos: {len(math_combos)}')
         for combo in math_combos:
-            print('**')
+            # print('**')
             my_expression = v[0]
             myzip = list(zip(v[1:], combo))
-            print(f'approx eval: {my_expression} {[f"{item[1]} {item[0]}" for item in myzip]}')
-            print(f'key: {k}')
+            # print(f'approx eval: {my_expression} {[f"{item[1]} {item[0]}" for item in myzip]}')
+            # print(f'key: {k}')
             for num in myzip:
                 if num[1] == '+':
                     my_expression += num[0]
                 elif num[1] == '*':
                     my_expression *= num[0]
-            print(f'ans: {my_expression}')
+                elif num[1] == '||':
+                    my_expression = int(f'{my_expression}{num[0]}')
+            # print(f'ans: {my_expression}')
             if k == my_expression:
                 matches += k
                 break
-        print('********')
+        # print('********')
     return matches
 
-matches = find_matches(myfile)
-print(f'Matches: {matches}')
+part_1_operators = ["+", "*"]
+matches = find_matches(myfile, part_1_operators)
+print(f'Part 1 matches: {matches}')
+
+# Part 2 / 2
+
+part_2_operators = ["+", "*", "||"]
+matches = find_matches(myfile, part_2_operators)
+print(f'Part 2 matches: {matches}')
