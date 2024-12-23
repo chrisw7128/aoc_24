@@ -1,6 +1,6 @@
 from pprint import pprint
 
-with open (f'data_9_2.txt') as fin:
+with open (f'data_09_2.txt') as fin:
     myfile = [int(item) for item in fin.read()]
 
 # Part 1 / 2

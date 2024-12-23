@@ -1,7 +1,7 @@
 from pprint import pprint
 from itertools import product
 
-with open(f'data_7.txt') as fin:
+with open(f'data_07.txt') as fin:
     myfile = fin.readlines()
     myfile = [[int(num) for num in item.replace(":", "").replace("\n", "").split()] for item in myfile]
     # # Tried nested lists below:

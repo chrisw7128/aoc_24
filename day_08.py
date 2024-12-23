@@ -1,7 +1,7 @@
 from pprint import pprint
 from itertools import combinations
 
-with open('data_8.txt') as fin:
+with open('data_08.txt') as fin:
     myfile = [row.strip() for row in fin]
 
 # pprint(myfile)

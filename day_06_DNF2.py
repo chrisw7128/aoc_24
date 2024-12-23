@@ -1,6 +1,6 @@
 import time
 
-with open('data_6_2.txt') as fin:
+with open('data_06_2.txt') as fin:
     myfile = [list(line.strip()) for line in fin]
 
 # Part 1 / 2

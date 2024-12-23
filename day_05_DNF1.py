@@ -1,6 +1,6 @@
 from pprint import pprint
 
-with open('data_5.txt') as fin:
+with open('data_05.txt') as fin:
     myfile = fin.readlines()
 
 # Clean the data to make a dict of the rules

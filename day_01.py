@@ -1,4 +1,4 @@
-with open('data_1.txt') as fin:
+with open('data_01.txt') as fin:
     myfile = fin.readlines()
 
 # Part 1/2
